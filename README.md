@@ -2,9 +2,43 @@
 
 Shared [Claude Code](https://docs.claude.com/en/docs/claude-code) plugins for the Sycamore organization: common workflow instructions, skills, commands, agents, and hooks that keep how we work with Claude consistent across teams and repositories.
 
-## Init Helper
+## Available plugins
 
-To set plugins up for everyone without a manual step, add a `SessionStart` hook to the project's `.claude/settings.json`:
+| Plugin     | Description                                                                                   |
+| ---------- | --------------------------------------------------------------------------------------------- |
+| `workflow` | Common Sycamore workflow instructions, e.g. the `finishing-work` skill for wrapping up tasks. |
+
+## Setup
+
+### 1. Configure the project
+
+Add the `sycamore` marketplace and enable the plugins you want in the project's `.claude/settings.json`, and commit it so everyone on the project gets the same configuration:
+
+```json
+{
+  "extraKnownMarketplaces": {
+    "sycamore": {
+      "source": {
+        "source": "github",
+        "repo": "the-sycamore-lab/claude-plugins"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "workflow@sycamore": true
+  }
+}
+```
+
+Plugins are referenced as `<plugin>@<marketplace>`, so every plugin from this repo ends in `@sycamore`.
+
+When someone trusts the project folder in Claude Code, they are prompted to install the marketplace and enabled plugins. To skip that manual step, use the init helper below.
+
+### 2. Install automatically (optional)
+
+The [init.sh](init.sh) script reads `.claude/settings.json`, registers every marketplace in `extraKnownMarketplaces`, and installs every plugin set to `true` in `enabledPlugins` at project scope. Anything already installed is skipped, so it is safe to run on every session.
+
+To run it for everyone, add a `SessionStart` hook to the same `.claude/settings.json`:
 
 ```json
 "hooks": {
