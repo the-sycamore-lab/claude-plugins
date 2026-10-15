@@ -4,9 +4,9 @@ Shared [Claude Code](https://docs.claude.com/en/docs/claude-code) plugins for th
 
 ## Available plugins
 
-| Plugin     | Description                                                                                   |
-| ---------- | --------------------------------------------------------------------------------------------- |
-| `workflow` | Common Sycamore workflow instructions, e.g. the `finishing-work` skill for wrapping up tasks. |
+| Plugin     | Description                                                                                                                                                                           |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `workflow` | Common Sycamore workflow instructions, e.g. the `finishing-work` skill for wrapping up tasks, and a `SessionStart` hook that bases new worktree branches on the latest `origin/main`. |
 
 ## Setup
 
