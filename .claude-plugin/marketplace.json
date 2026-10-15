@@ -1,0 +1,18 @@
+{
+  "name": "sycamore",
+  "owner": {
+    "name": "Sycamore"
+  },
+  "metadata": {
+    "description": "Shared Claude Code plugins for the Sycamore organization: common workflow instructions and helpers.",
+    "version": "0.1.0",
+    "pluginRoot": "./plugins"
+  },
+  "plugins": [
+    {
+      "name": "workflow",
+      "source": "workflow",
+      "description": "Common Sycamore workflow instructions for Claude Code."
+    }
+  ]
+}
