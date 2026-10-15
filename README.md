@@ -21,7 +21,8 @@ Add the `sycamore` marketplace and enable the plugins you want in the project's 
       "source": {
         "source": "github",
         "repo": "the-sycamore-lab/claude-plugins"
-      }
+      },
+      "autoUpdate": true
     }
   },
   "enabledPlugins": {
