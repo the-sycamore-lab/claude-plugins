@@ -15,7 +15,13 @@ If the two paths differ, you are in a **linked worktree**. If they are the same,
 
 ## In a linked worktree
 
-1. Commit your work on the current branch.
+1. Commit your work on the current branch under your own name, not the user's:
+
+   ```shell
+   git -c user.name="Claude" -c user.email="noreply@anthropic.com" commit
+   ```
+
+   Pass the same `-c` options to any other command that creates commits, such as `git rebase --continue`. Do not change the repository's git config.
 2. Check for merge conflicts against the **latest** main branch:
 
    ```shell
