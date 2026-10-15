@@ -16,8 +16,23 @@ If the two paths differ, you are in a **linked worktree**. If they are the same,
 ## In a linked worktree
 
 1. Commit your work on the current branch.
-2. Push the branch: `git push -u origin HEAD`.
-3. Tell the user the branch name and a URL to open a GitHub pull request for it:
+2. Check for merge conflicts against the **latest** main branch:
+
+   ```shell
+   git fetch origin main
+   git merge-tree --write-tree --name-only origin/main HEAD
+   ```
+
+   A non-zero exit code means there are conflicts; the conflicting files are listed after the tree ID. In that case, rebase on the main branch and resolve the conflicts:
+
+   ```shell
+   git rebase origin/main
+   # for each conflict: edit the files, then
+   git add <resolved-files>
+   git rebase --continue
+   ```
+3. Push the branch: `git push -u origin HEAD`.
+4. Tell the user the branch name and a URL to open a GitHub pull request for it:
 
    ```
    https://github.com/<owner>/<repo>/pull/new/<branch>
