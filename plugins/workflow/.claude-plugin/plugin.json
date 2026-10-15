@@ -1,6 +1,5 @@
 {
   "name": "workflow",
-  "version": "0.1.0",
   "description": "Common Sycamore workflow instructions for Claude Code.",
   "author": {
     "name": "Sycamore"
