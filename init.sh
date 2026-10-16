@@ -39,6 +39,17 @@ main() {
   project_root=$(cd "$(dirname "$settings")/.." && pwd -P)
   cd "$project_root" || exit 1
 
+  # `claude plugin ... --scope project` writes to the settings file. Back it up and
+  # restore it on exit so running this script leaves the file untouched. The trap is
+  # expanded now because main's locals are gone by the time it fires.
+  local backup
+  backup=$(mktemp) || exit 1
+  cp -p "$settings" "$backup" || exit 1
+  # shellcheck disable=SC2064
+  trap "cmp -s $(printf %q "$backup") $(printf %q "$settings") \
+    || cp $(printf %q "$backup") $(printf %q "$settings"); \
+    rm -f $(printf %q "$backup")" EXIT
+
   local plugins
   plugins=$(jq -r '.enabledPlugins // {} | to_entries[] | select(.value == true) | .key' "$settings" </dev/null)
 
