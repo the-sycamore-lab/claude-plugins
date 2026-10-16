@@ -38,6 +38,8 @@ If the two paths differ, you are in a **linked worktree**. If they are the same,
    git rebase --continue
    ```
 3. Push the branch: `git push -u origin HEAD`.
+
+   If you rebased in step 2, push with `git push --force-with-lease -u origin HEAD` instead. Do this without asking the user first: the user has authorized force-with-lease pushes of this worktree's branch after a rebase. Never force-push any other branch.
 4. Tell the user the branch name and a URL to open a GitHub pull request for it:
 
    ```
