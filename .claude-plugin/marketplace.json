@@ -12,6 +12,11 @@
       "name": "workflow",
       "source": "workflow",
       "description": "Common Sycamore workflow instructions for Claude Code."
+    },
+    {
+      "name": "typescript",
+      "source": "typescript",
+      "description": "Sycamore TypeScript coding conventions for Claude Code."
     }
   ]
 }

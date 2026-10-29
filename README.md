@@ -4,9 +4,10 @@ Shared [Claude Code](https://docs.claude.com/en/docs/claude-code) plugins for th
 
 ## Available plugins
 
-| Plugin     | Description                                                                                                                                                                           |
-| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `workflow` | Common Sycamore workflow instructions, e.g. the `finishing-work` skill for wrapping up tasks, and a `SessionStart` hook that bases new worktree branches on the latest `origin/main`. |
+| Plugin       | Description                                                                                                                                                                           |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `workflow`   | Common Sycamore workflow instructions, e.g. the `finishing-work` skill for wrapping up tasks, and a `SessionStart` hook that bases new worktree branches on the latest `origin/main`. |
+| `typescript` | Sycamore TypeScript coding conventions, provided as the `typescript-conventions` skill that Claude applies when creating or updating `.ts`/`.tsx` files.                              |
 
 ## Setup
 
@@ -26,7 +27,8 @@ Add the `sycamore` marketplace and enable the plugins you want in the project's 
     }
   },
   "enabledPlugins": {
-    "workflow@sycamore": true
+    "workflow@sycamore": true,
+    "typescript@sycamore": true
   }
 }
 ```

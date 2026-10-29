@@ -1,0 +1,7 @@
+{
+  "name": "typescript",
+  "description": "Sycamore TypeScript coding conventions for Claude Code.",
+  "author": {
+    "name": "Sycamore"
+  }
+}
