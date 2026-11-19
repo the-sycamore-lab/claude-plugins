@@ -17,6 +17,11 @@
       "name": "typescript",
       "source": "typescript",
       "description": "Sycamore TypeScript coding conventions for Claude Code."
+    },
+    {
+      "name": "astro",
+      "source": "astro",
+      "description": "Sycamore Astro coding conventions for Claude Code."
     }
   ]
 }

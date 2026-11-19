@@ -8,6 +8,7 @@ Shared [Claude Code](https://docs.claude.com/en/docs/claude-code) plugins for th
 | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `workflow`   | Common Sycamore workflow instructions, e.g. the `finishing-work` skill for wrapping up tasks, and a `SessionStart` hook that bases new worktree branches on the latest `origin/main`. |
 | `typescript` | Sycamore TypeScript coding conventions, provided as the `typescript-conventions` skill that Claude applies when creating or updating `.ts`/`.tsx` files.                              |
+| `astro`      | Sycamore Astro coding conventions, provided as the `astro-conventions` skill that Claude applies when working on `.astro` components, Astro packages, content collections and i18n.   |
 
 ## Setup
 
@@ -28,7 +29,8 @@ Add the `sycamore` marketplace and enable the plugins you want in the project's 
   },
   "enabledPlugins": {
     "workflow@sycamore": true,
-    "typescript@sycamore": true
+    "typescript@sycamore": true,
+    "astro@sycamore": true
   }
 }
 ```
