@@ -49,6 +49,8 @@ If the two paths differ, you are in a **linked worktree**. If they are the same,
 
    Take `<owner>/<repo>` from `git remote get-url origin`.
 
+If the fetch or the push fails with a GitHub authentication error, follow the `authenticating-with-github` skill, then retry.
+
 ## In the main worktree
 
 Do not commit. Leave your changes in the working tree as they are, and wait for the user to inspect and commit them.
