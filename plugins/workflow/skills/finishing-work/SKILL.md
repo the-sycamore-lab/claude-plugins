@@ -15,7 +15,7 @@ If the two paths differ, you are in a **linked worktree**. If they are the same,
 
 ## In a linked worktree
 
-1. Commit your work on the current branch under your own name, not the user's:
+1. Commit your work on the current branch under your own name using conventional commit message, not the user's:
 
    ```shell
    git -c user.name="Claude" -c user.email="noreply@anthropic.com" commit
@@ -37,12 +37,13 @@ If the two paths differ, you are in a **linked worktree**. If they are the same,
    git add <resolved-files>
    git rebase --continue
    ```
+
 3. Push the branch: `git push -u origin HEAD`.
 
    If you rebased in step 2, push with `git push --force-with-lease -u origin HEAD` instead. Do this without asking the user first: the user has authorized force-with-lease pushes of this worktree's branch after a rebase. Never force-push any other branch.
 4. Tell the user the branch name and a URL to open a GitHub pull request for it:
 
-   ```
+   ```txt
    https://github.com/<owner>/<repo>/pull/new/<branch>
    ```
 
